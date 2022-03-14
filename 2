@@ -1,0 +1,12 @@
+
+workflows:
+  build-deploy-snapshot:
+    jobs:
+      - build
+      - build:
+          filters:
+            branches:
+              ignore: nexus-2.x
+      - deploy-snapshot:
+          filters:
+            branches:1
